@@ -4,6 +4,7 @@ var contactController = require('../controllers/contactController');
 var registerController = require('../controllers/registerController');
 var loginController = require('../controllers/loginController');
 var express = require('express');
+const res = require('express/lib/response');
 
 var router = express.Router();
 
@@ -13,12 +14,14 @@ router.get('/', baseController.basecontroller);
 //looking for page
 router.get('/lookingfor', loogkinforController.loogkinforcontroller);
 router.get('/lookingfor/:id', loogkinforController.loogkinforcontrollerID);
+router.post('/testpage', loogkinforController.loogkinforcontrollerPOST);
 router.get('/contact',  contactController.contactcontroller);
 router.get('/register', registerController.registercontroller);
 router.get('/login', loginController.logincontroller);
 router.get('/menu', (req,res)=>{
   res.render('menu', { title: 'Express' });
 });
+
 
 
 /* GET home page. 

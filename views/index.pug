@@ -5,20 +5,42 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel='stylesheet', href='/stylesheets/style.css')
-    title Document
-    include menu.pug
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;1,900&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&display=swap" rel="stylesheet")
+    title Hotelify
+    
   body
-  div(class = 'content')
-    center
-      h2 List of hotels 
+    div(class='actuallyInformations')
+      span Actual date: 28.02.2022 
+      span Actual time: 00:52:00
+    div(class='banner')
+      span(class='bannerWelcome') Welcome, find you dreamily hotel...
+    include menu.pug
+    div(class='content')
+    br
     each data in hotels
       div(class='contentObject') 
-        ul
-          li #{data.nameOfFlat} lokalizacja: #{data.localization}
-          a(href="/lookingfor/"+data.id) Sprawdź
+        div(class='mostImportantInfo')
+          ul
+            span(class='nameOfplaceSPAN') Name of place: 
+            span(class="nameOf") #{data.nameOfFlat}
+            ul 
+            li Localization:     #{data.localization}
+            li Type of building: #{data.typeOfBuilding}
+            li Rooms:            #{data.numberOfRooms} Beds :            #{data.numberOfBeds}
+            li Price for 1d :    #{data.priceForOneDay}
+          a(href="/lookingfor/"+data.id class="checkHotel") More info
+        div(class='photo')
+        - var img = "images/"+data.id+".jpg";
+        img(src=img alt='Cannot load the file' class="responsive")
     else
       ul
         li Nic nie ma
+  include footer
+
 
 
 
