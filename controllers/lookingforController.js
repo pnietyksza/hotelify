@@ -5,18 +5,30 @@ var bodyParser = require('body-parser');
 
 //displaying looking page
 exports.loogkinforcontroller = ( req, res )=>{
-    res.render('lookingfor');
+    var sqlquery = 'SELECT `localization` FROM `flat` GROUP BY `localization`';
+    db.query(sqlquery, (err,data,fields)=>{
+        if (err) throw err;
+        res.render('lookingfor', { title: 'List of hotels', hotels: data });
+    });
+
+    //res.render('lookingfor');
 };
 
 exports.loogkinforcontrollerPOST = ( req, res ) =>{
     var localization = req.body.localization;
+    console.log(localization);
     var numberOfBeds = parseInt(req.body.numberOfBeds);
     var sqlquery = 'SELECT * FROM `flat` WHERE `localization` = "'+localization+'" AND `numberOfBeds` = '+numberOfBeds+';';
     console.log(sqlquery);
     db.query(sqlquery, (err, data, fields)=>{
         if (err) throw err;
-        console.log(data);
-        res.send(data);
+        const isEmpty = Object.keys(data).length === 0;
+        if(isEmpty===true){
+            res.send('Sorry, cannot find');
+        }else{
+            res.send(data);
+        }
+        console.log(isEmpty);
     });
 
 

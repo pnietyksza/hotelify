@@ -6,10 +6,12 @@ html,body{
 body {
 
   text-align: center;
+  background-color: #e3e3ff;
 
 }
+/* 565695 */
 .banner{
-  background-color: #565695;
+  background-color: #9393c2;
   font-size: 3em;
   font-family: 'Merriweather', serif;
   width: 100%;
@@ -29,7 +31,6 @@ li{
 .content{
   margin: 0 auto;
   margin: auto;
-  background-color: red;
   height: auto;
 
 }
@@ -58,7 +59,7 @@ li{
   width: 50%;
   clear: both;
   float: left;
-  font-family: 'Playfair Display', serif;
+
   font-size: medium;
   font-weight: bold;
   padding-bottom: 20px;
@@ -84,12 +85,6 @@ li{
 	text-decoration:none;
 	text-shadow:0px 1px 0px #e1e2ed;
 }
-
-.newsletter{
-  padding: 20px;
-  font-size: 1.5em;
-  color: white;
-}
 .newsletter input{
   padding: 5px;
   font-size: 16px;
@@ -103,9 +98,6 @@ li{
   text-shadow: 0px 0px 5px rgba(66,66,66,.75);
 }
 @media only screen and (max-width: 725px) {
-  body {
-    
-  }
   .responsive {
     width: 100%;
     max-width: 180px;
@@ -119,7 +111,6 @@ li{
     width: 50%;
     clear: both;
     float: left;
-    font-family: 'Playfair Display', serif;
     font-size: 10px;
     font-weight: bold;
     padding-bottom: 20px;
@@ -156,6 +147,12 @@ li{
 
 }
 
+.newsletter{
+  padding: 20px;
+  font-size: 1.5em;
+  color: white;
+  background-color: #4c4ca5;
+}
 
 .actuallyInformations{
   width: 100%;
@@ -182,6 +179,9 @@ li{
 }
 .informationsAboutCompany li,ul{
   list-style-type: none;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
+}
+.findHotelSpan{
+
 }

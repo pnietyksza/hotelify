@@ -7,15 +7,20 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel='stylesheet', href='/stylesheets/style.css')
         title Hotelify
-    body 
-        h2 Find your place! :
-        form(action="/testpage", method="post") 
-            span Choose city: 
-            br
-            input(type="text" name='localization')
-            br
-            span Number of beds:
-            br
-            input(type="number", name="numberOfBeds" value="1")
-            br
-            input(type="Submit", value="Find")
+    body
+        div(class='content')
+            span(class='findHotelSpan') Here you would find places for sleep
+            form(action="/testpage", method="post") 
+                span Choose city: 
+                br
+                input(list="localization" name='localization')
+                datalist(id="localization")
+                    each data in hotels
+                        option(value=data.localization)
+                br
+                span Number of beds:
+                br
+                input(type="number", name="numberOfBeds" value="1")
+                br
+                input(type="Submit", value="Find")
+    include footer.pug
