@@ -9,18 +9,21 @@ html(lang="en")
         title Hotelify
     body
         div(class='content')
-            span(class='findHotelSpan') Here you would find places for sleep
-            form(action="/testpage", method="post") 
-                span Choose city: 
-                br
-                input(list="localization" name='localization')
-                datalist(id="localization")
-                    each data in hotels
-                        option(value=data.localization)
-                br
-                span Number of beds:
-                br
-                input(type="number", name="numberOfBeds" value="1")
-                br
-                input(type="Submit", value="Find")
+            br
+            br
+            div.item
+                span(class='findHotelSpan') Here you would find places for sleep
+                form(action="/testpage", method="post") 
+                    span Choose city: 
+                    br
+                    input(list="localization" name='localization')
+                    datalist(id="localization")
+                        each data in hotels
+                            option(value=data.localization)
+                    br
+                    span Number of beds:
+                    br
+                    input(type="number", name="numberOfBeds" value="1")
+                    br
+                    input(type="Submit", value="Find")
     include footer.pug

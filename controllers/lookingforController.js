@@ -26,7 +26,7 @@ exports.loogkinforcontrollerPOST = ( req, res ) =>{
         if(isEmpty===true){
             res.send('Sorry, cannot find');
         }else{
-            res.send(data);
+            res.render('lookingforResponse', { title: 'List of hotels', hotels: data });
         }
         console.log(isEmpty);
     });
@@ -42,6 +42,6 @@ exports.loogkinforcontrollerID = ( req, res )=>{
     db.query(sqlquery, ( err, data, fields )=>{
         if (err) throw err;
         console.log(data);
-        res.send(data);
+        res.render('test',{ title: 'List of hotels', hotels: data });
     });
 };

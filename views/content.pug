@@ -1,0 +1,17 @@
+link(rel='stylesheet', href='/stylesheets/style.css')
+div(class='content')
+    br
+    each data in hotels
+        div.item
+            div.picture 
+                - var img = "images/"+data.id+".jpg";
+                img(src=img alt='Cannot load the file' class="photo")
+            div.info
+                ul #{data.nameOfFlat}
+                    li Where: #{data.localization}
+                    li Type: #{data.typeOfBuilding}
+                    li Beds: #{data.numberOfRooms}
+                a(href="/lookingfor/"+data.id class="checkHotel") More info
+    else
+        ul
+        li Nic nie ma

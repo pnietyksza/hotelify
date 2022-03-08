@@ -1,0 +1,55 @@
+doctype html
+html(lang="en")
+    head
+        script(src='javascripts/skrypt.js') 
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+    body 
+    include menu.pug
+    script(src='/public/javascripts/script.js')
+    div.content
+        br
+        br
+        each data in hotels
+            div.informationsAboutCurrent
+                ul Detailed information:
+                    li Name:
+                    span.info #{data.nameOfFlat}
+                    li Type of building:
+                    span.info #{data.typeOfBuilding}
+                    li Mail adress: 
+                    span.info #{data.emailToContact}
+                    li Number of rooms: 
+                    span.info #{data.numberOfRooms}
+                    li Number of beds: 
+                    span.info #{data.numberOfBeds}
+                    li Floor:
+                    span.info #{data.numberOFFloor}
+                    li Localization: 
+                    span.info #{data.localization}
+                    li Price for one day: 
+                    span.info #{data.priceForOneDay}
+                    li Additional informations:
+                    span.info #{data.additionalInformations}
+
+            div.slider
+                ul.slides
+                    li.slide 
+                        img(src="https://unsplash.it/1280/720/?image=120", alt="")
+                    li.slide 
+                        img(src="https://unsplash.it/1280/720/?image=70", alt="")
+                    li.slide 
+                        img(src="https://unsplash.it/1280/720/?image=50", alt="")
+                    li.slide 
+                        img(src="https://unsplash.it/1280/720/?image=170", alt="")
+                    li.slide 
+                        img(src="https://unsplash.it/1280/720/?image=190", alt="")
+            div.buttons
+                button(type='button' class='btn btn-default pause')
+                    span(class='glyphicon glyphicon-pause')
+                button(type="button" class='btn btn-default play') 
+                    span(class='glyphicon glyphicon-play')
+    include footer.pug

@@ -11,35 +11,13 @@ html(lang="en")
     link(href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;1,900&display=swap" rel="stylesheet")
     link(href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&display=swap" rel="stylesheet")
     title Hotelify
-    
   body
-    div(class='actuallyInformations')
-      span Actual date: 28.02.2022 
-      span Actual time: 00:52:00
-    div(class='banner')
-      span(class='bannerWelcome') Welcome, find you dreamily hotel...
+    div.banner
+      span place for add or banner
     include menu.pug
-    div(class='content')
-    br
-    each data in hotels
-      div(class='contentObject') 
-        div(class='mostImportantInfo')
-          ul
-            span(class='nameOfplaceSPAN') Name of place: 
-            span(class="nameOf") #{data.nameOfFlat}
-            ul 
-            li Localization:     #{data.localization}
-            li Type of building: #{data.typeOfBuilding}
-            li Rooms:            #{data.numberOfRooms} Beds :            #{data.numberOfBeds}
-            li Price for 1d :    #{data.priceForOneDay}
-          a(href="/lookingfor/"+data.id class="checkHotel") More info
-        div(class='photo')
-        - var img = "images/"+data.id+".jpg";
-        img(src=img alt='Cannot load the file' class="responsive")
-    else
-      ul
-        li Nic nie ma
-  include footer
+    include content.pug
+  include footer.pug
+
 
 
 

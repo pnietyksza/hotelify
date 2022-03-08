@@ -21,6 +21,9 @@ router.get('/login', loginController.logincontroller);
 router.get('/menu', (req,res)=>{
   res.render('menu', { title: 'Express' });
 });
+router.get('/test', (req,res)=> {
+  res.render('test');
+});
 
 
 
